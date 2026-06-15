@@ -41,14 +41,15 @@
             color: #495057;
         }
         .promo-area {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 20px;
             text-decoration: none;
             color: #333333;
             background-color: #fff9f9;
             border: 2px solid #bf0000;
             border-radius: 10px;
-            padding: 25px;
-            text-align: center;
+            padding: 20px;
             transition: all 0.3s ease;
             margin: 40px 0;
             box-shadow: 0 2px 8px rgba(191, 0, 0, 0.05);
@@ -59,20 +60,20 @@
             box-shadow: 0 4px 12px rgba(191, 0, 0, 0.15);
         }
         .promo-text {
+            flex: 1;
             font-size: 16px;
             font-weight: bold;
             line-height: 1.6;
-            margin-bottom: 15px;
             color: #bf0000;
+            text-align: left;
         }
         .promo-img {
-            max-width: 180px;
+            max-width: 120px; /* 画像を小さめに調整 */
             width: 100%;
             height: auto;
-            display: block;
-            margin: 0 auto;
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
         footer {
             text-align: center;
@@ -83,6 +84,20 @@
             margin-top: 50px;
             font-weight: 500;
         }
+        /* スマホ対応：画面が狭いときは縦並びにして見やすくする設定 */
+        @media (max-width: 576px) {
+            .promo-area {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            .promo-text {
+                text-align: center;
+            }
+            .promo-img {
+                max-width: 150px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -92,7 +107,9 @@
         </header>
         
         <main>
-            <div class="profile-text">しょーでんです 23歳 男 発達障害を持って生まれました 
+            <div class="profile-text">しょーでんきんゆーへようこそしょーでんです このブログでは 投資をはじめとする金融 株式投資 投資家マインド 経済の仕組みなど しょーでんが勉強した様々な知識を共有したいと思います といっても しょーでんってだれ？ って思うと思うので まず自己紹介します
+
+しょーでんです 23歳 男 発達障害を持って生まれました 
 
 このブログを始めたきっかけは 僕が20歳のころ 投資に興味を持ち 米国株式のインデックスファンドがいいとかいうことを勉強したり 様々な投資についていろんな勉強を独学でしたことがあります その他のお金持ちの考え方や投資家マインドなどもめちゃくちゃ勉強していました 
 
@@ -107,10 +124,10 @@
 ということで 前置きが長くなってしまいました</div>
 
             <a href="https://shoodenn.github.io/shoodennkinnyuu/kizi/toripururakutennotoku.html" class="promo-area">
+                <img src="https://shoodenn.github.io/shoodennkinnyuu/aikyatti/toripururakutenn.png" alt="楽天三点セット" class="promo-img">
                 <div class="promo-text">
                     楽天証券と楽天銀行と楽天カードを活用すれば 楽天証券で楽天ポイントで実質ノーリスク少額で積み立てNISAが試せます 興味がある方はこちら
                 </div>
-                <img src="https://shoodenn.github.io/shoodennkinnyuu/aikyatti/toripururakutenn.png" alt="楽天三点セット" class="promo-img">
             </a>
         </main>
 
