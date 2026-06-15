@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【ノーリスク】楽天ポイントで始めるつみたてNISA！初心者向け徹底解説</title>
+    <title>しょーでんきんゆー | 楽天ポイント投資ガイド</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* 1. 基本設定 */
         :root {
-            --primary-color: #bf0000; /* 楽天レッド */
-            --secondary-color: #1a365d; /* ネイビー */
-            --bg-color: #f9f9f9;
-            --text-color: #333333;
-            --accent-color: #ff9900;
-            --card-bg: #ffffff;
+            --rakuten-red: #bf0000;
+            --deep-navy: #1e293b;
+            --soft-bg: #f8fafc;
+            --accent-gold: #b45309;
+            --text-main: #334155;
+            --white: #ffffff;
         }
 
         * {
@@ -21,408 +26,362 @@
         }
 
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            padding: 0;
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        /* 背景デザイン（Flowing Lines） */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            overflow: hidden;
         }
 
-        /* ヘッダー・アイキャッチ */
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(191, 0, 0, 0.03) 0%, transparent 70%);
+            transform: rotate(-15deg);
+        }
+
+        /* 2. ヘッダー（しょーでんきんゆー） */
         header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #e60012 100%);
-            color: white;
-            padding: 40px 30px;
+            background-color: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .site-logo {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--rakuten-red);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        /* 3. コンテナ */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: var(--white);
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        /* 4. タイトル・見出し */
+        .article-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--deep-navy);
+            margin-bottom: 20px;
+            line-height: 1.3;
             text-align: center;
         }
 
-        header h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
-
-        header .subtitle {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        /* メインコンテンツ */
-        .main-content {
-            padding: 40px 30px;
+        .article-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         h2 {
+            font-size: 24px;
+            color: var(--deep-navy);
+            border-bottom: 2px solid var(--rakuten-red);
+            padding-bottom: 8px;
+            margin: 50px 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 i {
+            color: var(--rakuten-red);
             font-size: 20px;
-            color: var(--secondary-color);
-            border-left: 5px solid var(--primary-color);
-            padding-left: 12px;
-            margin-top: 40px;
-            margin-bottom: 20px;
         }
 
         h3 {
-            font-size: 16px;
-            color: var(--secondary-color);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
+            font-size: 20px;
+            color: var(--deep-navy);
+            margin: 30px 0 15px;
+            padding-left: 15px;
+            border-left: 4px solid var(--rakuten-red);
         }
 
-        h3::before {
-            content: "◆";
-            color: var(--primary-color);
-            margin-right: 6px;
-            font-size: 12px;
-        }
-
-        p {
-            margin-bottom: 20px;
-            text-align: justify;
-            font-size: 15px;
-        }
-
-        /* 導入文スタイル */
-        .intro-box {
-            background-color: #fff5f5;
-            border: 1px solid #feb2b2;
+        /* 5. コンテンツパーツ */
+        .intro-section {
+            background-color: #fffafb;
+            border: 1px solid #fee2e2;
+            padding: 30px;
             border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .intro-box p {
-            margin-bottom: 15px;
-        }
-        .intro-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* 専門用語解説 */
-        .glossary-list {
-            margin-bottom: 30px;
+        .glossary-card {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .glossary-item {
-            background-color: #f8fafc;
+            background: var(--soft-bg);
+            padding: 20px;
+            border-radius: 8px;
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 15px 20px;
-            margin-bottom: 15px;
         }
 
         .glossary-term {
-            font-weight: bold;
-            color: var(--primary-color);
+            font-weight: 700;
+            color: var(--rakuten-red);
+            margin-bottom: 8px;
             font-size: 16px;
-            margin-bottom: 5px;
         }
 
         .glossary-desc {
-            font-size: 14.5px;
-            color: #4a5568;
+            font-size: 14px;
+            color: #475569;
         }
 
-        /* コールアウト（おすすめ理由など） */
-        .callout-box {
-            background-color: #ebf8ff;
-            border-left: 4px solid #3182ce;
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 25px 0;
-        }
-
-        .callout-title {
-            font-weight: bold;
-            color: #2b6cb0;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        /* 手順リスト */
-        .step-list {
-            list-style: none;
-            margin: 25px 0;
-        }
-
-        .step-item {
-            position: relative;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px 20px 20px 60px;
-            margin-bottom: 15px;
-        }
-
-        .step-number {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            transform: translateY(-50%);
-            background-color: var(--primary-color);
+        .point-highlight {
+            background: linear-gradient(135deg, var(--rakuten-red) 0%, #800000 100%);
             color: white;
-            width: 32px;
-            height: 32px;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .point-value {
+            font-size: 48px;
+            font-weight: 700;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .step-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            gap: 20px;
+        }
+
+        .step-num {
+            background: var(--rakuten-red);
+            color: white;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
-        .step-text {
-            font-weight: bold;
-            font-size: 15px;
-            color: var(--secondary-color);
-        }
-
-        /* 警告・注意ボックス */
-        .warning-box {
-            background-color: #fffaf0;
-            border: 2px dashed var(--accent-color);
+        .caution-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 30px;
             border-radius: 8px;
-            padding: 20px;
-            margin: 30px 0;
+            margin: 40px 0;
         }
 
-        .warning-title {
-            font-weight: bold;
-            color: #dd6b20;
-            margin-bottom: 10px;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
+        .summary-list {
+            list-style: none;
+            padding: 0;
         }
 
-        /* まとめ */
-        .summary-box {
-            background-color: #f0fff4;
-            border: 1px solid #9ae6b4;
-            border-radius: 8px;
-            padding: 25px;
-            margin-top: 40px;
+        .summary-list li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            border-bottom: 1px dashed #e2e8f0;
         }
 
-        .summary-title {
-            font-weight: bold;
-            color: #2f855a;
-            font-size: 18px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #9ae6b4;
-            padding-bottom: 5px;
+        .summary-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #10b981;
         }
 
-        /* リンク準備中 */
-        .link-placeholder {
-            background-color: #edf2f7;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            color: #4a5568;
-            margin-top: 30px;
-        }
-
-        /* フッター */
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
+        .link-status {
             text-align: center;
             padding: 20px;
-            font-size: 12px;
-            margin-top: 50px;
+            background: #f1f5f9;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 60px;
         }
 
-        /* レスポンシブ調整 */
-        @media (max-width: 600px) {
-            header {
-                padding: 30px 20px;
-            }
-            header h1 {
-                font-size: 20px;
-            }
-            .main-content {
-                padding: 25px 15px;
-            }
-            .step-item {
-                padding: 15px 15px 15px 50px;
-            }
-            .step-number {
-                left: 10px;
-                width: 28px;
-                height: 28px;
-                font-size: 12px;
-            }
+        /* 6. レスポンシブ */
+        @media (max-width: 768px) {
+            .container { padding: 30px; margin: 20px; }
+            .article-title { font-size: 28px; }
+            .glossary-card { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+<div class="bg-decoration"></div>
+
+<header>
+    <div class="site-logo">しょーでんきんゆー</div>
+</header>
+
 <div class="container">
-    <header>
-        <h1>楽天ポイントで始めるノーリスク投資！<br>生活費の支払いでつみたてNISAを攻略する方法</h1>
-        <div class="subtitle">日常の決済を最適化して、自分のお金を一円も損せずに資産形成を体験しよう</div>
-    </header>
+    <h1 class="article-title">
+        自分のお金を一円も減らさずに<br>「つみたてNISA」を始める最強の楽天活用術
+    </h1>
+    <p class="article-subtitle">生活費の支払いを資産に変える、賢いポイ活投資の仕組みを徹底解説</p>
 
-    <div class="main-content">
-        
-        <div class="intro-box">
-            <p>しょーでんきんゆーのしょーでんです！</p>
-            <p>みなさんは投資に興味はありますでしょうか？「つみたてNISAなどに興味はあるけれど、実際にお金を入れるのが不安だな…」という方に、今回の記事はめちゃくちゃおすすめです！</p>
-            <p>楽天ポイントを将来の資産として長期保存ができる情報をみなさんは知っていますでしょうか？</p>
-            <p>楽天カードを使うと、支払い料金の1％がポイント還元されるのはご存じでしょう。実は、楽天カードの引き落とし先を「楽天銀行」に設定することで、さらに0.5％ポイント還元率がアップすることもご存じですか？</p>
-            <p>さらにその貯まった楽天ポイントを使って、楽天証券でNISAの積み立てが可能なんです！</p>
-            <p>しかし、「やっぱり投資は怖い」という声もあると思います。そこで、本当のお金をいきなり入れるのではなく、楽天カードで生活費を支払って楽天銀行から引き落としをして、還元されたポイントでやってみれば、<strong>本当のお金を損せずに投資が試せる</strong>という素晴らしい情報です。それがこの記事です！</p>
-            <p>さらに、実際にポイントで投資して不安になってファンドなどを売却した場合、その<strong>売り上げはポイントではなく「現金」として手元に戻ります。</strong></p>
-            <p>それでは、さっそく詳しく解説していきます！</p>
-        </div>
-
-        <h2>出てくる専門用語解説</h2>
-        <div class="glossary-list">
-            <div class="glossary-item">
-                <div class="glossary-term">ファンド</div>
-                <div class="glossary-desc">投資家から集めたお金をひとつの大きな資金としてまとめ、運用の専門家が代わりに管理・運用する仕組み、またはその商品のことです。</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">NISA（ニーサ）</div>
-                <div class="glossary-desc">投資で得た利益にかかる税金（約20%）がゼロになる、国が作った非常にお得な少額投資非課税制度です。</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">積み立て</div>
-                <div class="glossary-desc">毎月など決まったタイミングで、一定の金額（例えば毎月1,000円など）をコツコツと継続して買い続ける投資方法です。</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">証券口座</div>
-                <div class="glossary-desc">株や投資信託などの金融商品を売り買いするために、銀行とは別に証券会社で作る専用の口座のことです。</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">株式</div>
-                <div class="glossary-desc">企業が事業の資金を集めるために発行する証明書です。企業の業績が上がって価値が高まると、株価が上がって利益を得られます。</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">投資信託</div>
-                <div class="glossary-desc">「ファンド」と同じ意味です。たくさんの人から集めたお金を、投資のプロが色々な株や債券などに小分けにして分散投資してくれる商品のことです。</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">インデックスファンド</div>
-                <div class="glossary-desc">特定の市場（例：米国の主要企業500社など）の平均値と同じ値動きを目指して、自動的に運用されるファンドです。手数料が非常に安いのが特徴です。</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">アクティブファンド</div>
-                <div class="glossary-desc">市場の平均以上の成績（リターン）を目指して、ファンドマネージャーという人間のプロが独自に株を選んで運用するファンドです。手間がかかる分、手数料が高めです。</div>
-            </div>
-        </div>
-
-        <h2>リスクを極限まで抑えてつみたてNISAを始めるなら「楽天の3大サービス」</h2>
-        <p>リスクを極限まで抑えてつみたてNISAでの投資を始めたい場合、楽天の3つのサービス（楽天カード・楽天銀行・楽天証券）を連携させて使うのが最もおすすめです！</p>
-        
-        <div class="callout-box">
-            <div class="callout-title">しょーでんが楽天のサービスをおすすめする理由</div>
-            <p>それは、<strong>圧倒的にポイント還元率がいいこと</strong>と、<strong>貯まったポイントで本物の投資が可能だから</strong>です！</p>
-            <p>さらに、ポイントで投資した分を売却して取り崩した場合、<strong>現金として手元に戻る</strong>ので、マジでリスクなしで投資を始めるのにおすすめできます。</p>
-        </div>
-
-        <h3>一番稼ぐのが簡単なのが「楽天ポイント」</h3>
-        <p>楽天ポイントは、しょーでんが今まで貯めた中で、最も簡単に、下手したら何も考えなくても貯まってしまったポイントです。正直、一番稼ぐのが簡単なポイントだと思っています。</p>
-        <p>ただ楽天カードや楽天銀行のデビットカードで生活費などを支払っているだけでも、少なくとも月10万円で生活している人なら、ひと月で1,000ポイント（1,000円相当）は簡単に貯まってしまいます。</p>
-
-        <h3>ポイント消滅リスクもほぼゼロ！</h3>
-        <p>さらに、ポイントが消えてしまうリスクもほぼゼロです。なぜなら、楽天ポイント（通常ポイント）の有効期限は「1年間ポイント未使用、かつ1年間新しいポイントを未取得の場合のみ」失効するルールだからです。楽天カードなどで毎月固定費などを支払っていれば、毎月新しいポイントが自動で入るため、絶対に消えることはないと言えます！</p>
-
-        <h3>引き落とし設定で還元率1.5%にアップ！</h3>
-        <p>さらに、楽天カードで固定費などを支払って、その引き落とし先を楽天銀行に設定していれば、なんとポイント還元率が0.5%アップして<strong>合計1.5%</strong>になります！これ、地味にでかくないですか？</p>
-        <p>つみたてNISAでの投資に興味がある方なら、この還元されたポイントのみでも投資が始められます。つまり、</p>
-        <ul>
-            <li><strong>月10万円</strong>で生活している人なら：<strong>月1,500円分</strong>のポイント</li>
-            <li><strong>月15万円</strong>で生活している人なら：<strong>月2,250円分</strong>のポイント （計算バッチリ合ってます！）</li>
-        </ul>
-        <p>これらが毎月手に入り、それをそのまま投資に回せるわけです。実質ノーリスクでつみたてNISAが始められるということです！</p>
-
-        <h2>ノーリスク投資環境を作るための4ステップ</h2>
-        <p>勝手にポイントが貯まって、それを投資に回す自動仕組み作りの手順を解説します。</p>
-        
-        <ul class="step-list">
-            <li class="step-item">
-                <span class="step-number">1</span>
-                <span class="step-text">楽天アカウント（ID）の作成</span>
-                <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">すべてはここから！楽天の会員登録をしていない方はまずアカウントを作りましょう。</p>
-            </li>
-            <li class="step-item">
-                <span class="step-number">2</span>
-                <span class="step-text">楽天銀行の口座開設</span>
-                <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">ネット銀行である楽天銀行の口座を開設します。ここに毎月必要な生活費等が入るようにします。</p>
-            </li>
-            <li class="step-item">
-                <span class="step-number">3</span>
-                <span class="step-text">楽天カード（クレジットカード）の発行 ＆ 引き落とし口座設定</span>
-                <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">楽天カードを発行し、その引き落とし口座をご自身の「楽天銀行」に設定します。これで還元率が1.5%に跳ね上がります！固定費などの支払いをこのカードに集約しましょう。</p>
-            </li>
-            <li class="step-item">
-                <span class="step-number">4</span>
-                <span class="step-text">楽天証券の口座開設</span>
-                <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">実際に投資信託（ファンド）をポイントで購入するための証券口座を開設します。</p>
-            </li>
-        </ul>
-        <p>この手順で環境を作ってしまえば、あとは自動的に貯まったポイントを使って投資するだけです！</p>
-
-        <h2>しょーでんがおすすめする投資先とその理由</h2>
-        <p>そこで、しょーでんがおすすめする具体的な投資先は、以下の2つのインデックスファンドです。</p>
-        <ol style="margin-left: 20px; margin-bottom: 20px; font-weight: bold;">
-            <li>eMAXIS Slim 米国株式（S&P500）</li>
-            <li>eMAXIS Slim 全世界株式（オール・カントリー）</li>
-        </ol>
-
-        <h3>なぜこの2つなのか？（個別株のリスク）</h3>
-        <p>昔ながらの「個別株（特定の1つの会社の株）」に投資するやり方を思い浮かべる人もいると思いますが、初心者がそれをやるにはリスクが高すぎるのです。「この株に一点集中で投資するんだー！」と言って1つや2つの株に投資したら、その会社の株価が暴落した瞬間に一瞬で終わりです。</p>
-        <p>ですが、先ほど挙げたような<strong>インデックスファンド</strong>なら、例えば「S&P500」であれば米国の代表的な優秀な企業500社に分散して投資をする形になります。何より少額（数千円、何なら数百円からでも）始められるのでリスクも小さいです。</p>
-        <p>もし500社のうち、どこかの会社の株価が落ちたとしても、他の上がっている株がカバーしてくれたり、自動で業績の落ちた株が除外され、代わりに成長の見込みがある他の株が組み込まれたりします。そのため、個別株に一点集中するのと比べれば、かなりリスクが低い投資になります。</p>
-        <p>もう一つの「全世界株式（オール・カントリー）」は、米国の500株だけでなく、文字通り全世界に分散投資をする形です。ただ、全体の60％以上は米国株なので、値動き自体はそこまで大きくは変わりません。</p>
-
-        <h3>アクティブファンドに潜む「手数料ハンター」に気をつけろ</h3>
-        <p>投資信託（ファンド）の中には、「毎月分配金がもらえる」「高配当」など色々アピールしているものもありますが、そういうのは大抵<strong>アクティブファンド</strong>です。アクティブファンドは手数料が多く取られたり、リスクが大きかったりするので、将来のための長期投資には先ほどの2つのようなインデックスファンドが圧倒的におすすめです。</p>
-        <p>実は、<strong>「アクティブファンドは長期的にインデックスファンドに勝てない」</strong>というデータがしっかりと出ています。短期的に大きなリターンが出たとしても、人間が操作しているアクティブファンドは、指数に連動する自動運用のインデックスファンドと比べて安定しなかったり、手数料が高いという大きなデメリットがあります。</p>
-        <p>最悪な場合、インデックスファンドと中身は同じようなことをしていて同じくらいのリターンなのに、高い手数料だけをがっつり取られて、結果的にインデックスファンドの成績に負けてしまうという、いわば<strong>「手数料ハンター」</strong>のようなファンドも存在するらしいです。（これ、中田敦彦さんのYouTube大学というチャンネルで学びました！それなら絶対にインデックスファンドを選びますよね、ってことです）</p>
-
-        <div class="warning-box">
-            <div class="warning-title">⚠️ 大事なお約束：投資は自己責任で！</div>
-            <p>ですが、これはあくまで<strong>しょーでんの意見やおすすめ</strong>です。「しょーでんが言ってるなら大丈夫だ！」と思っただけで、そのまま何も考えずに投資することは絶対にしないでください。</p>
-            <p><strong>投資に絶対はありません。</strong> 特定の発信者や、プロの誰か一人がこう言っていたからという理由だけで投資をしてはいけません。必ず自分でも他の情報などに目を通して学び、仕組みを理解して、自分が許容できるリスクの範囲内で、納得した上で投資をしてくださいね。</p>
-        </div>
-
-        <div class="summary-box">
-            <div class="summary-title">まとめ</div>
-            <p>今回のポイントを振り返りましょう！</p>
-            <ol style="margin-left: 20px; font-size: 14.5px;">
-                <li>楽天カード×楽天銀行の連携で、生活費の決済ポイントが<strong>1.5%還元</strong>にアップ！</li>
-                <li>月10万〜15万の生活費決済だけで、毎月<strong>1,500円〜2,250円分</strong>のポイントが勝手に貯まる。</li>
-                <li>そのポイントを使って楽天証券のつみたてNISAで<strong>「実質ノーリスク投資」</strong>が試せる。</li>
-                <li>もし不安になって売却しても、戻ってくるのはポイントではなく<strong>「現金」</strong>！</li>
-                <li>投資先は手数料が安くリスクを抑えた<strong>「インデックスファンド（S&P500やオルカン）」</strong>がおすすめ。</li>
-            </ol>
-            <p style="margin-top: 15px; margin-bottom: 0;">まずは楽天の環境を作るところから、一歩を踏み出してみませんか？本当のお金を減らさずに、賢く将来の資産形成を体験してみましょう！</p>
-        </div>
-
-        <div class="link-placeholder">
-            【ただいま、楽天カード・楽天銀行・楽天証券のお得な開設リンクを設置する準備中です。しばらくお待ちください。】
-        </div>
-
+    <div class="intro-section">
+        <p>しょーでんきんゆーのしょーでんです！</p>
+        <p>投資に興味はありますでしょうか？「積み立てNISAなどに興味はあるけど、実際にお金を入れるのが不安…」という方に、今回の記事は非常におすすめです。</p>
+        <p>楽天ポイントを将来の資産として長期保存ができる情報をみなさんは知っていますでしょうか？</p>
+        <p>楽天カードを使うと支払い料金の1％がポイント還元されるのはご存じでしょう。実は<strong>楽天カードの引き落としを楽天銀行に設定することで、さらに0.5％ポイント還元率がアップ</strong>することもご存じですか？</p>
+        <p>その還元されたポイントを使って、楽天証券でNISAの積み立てが可能なんです。投資は怖いという声もあると思いますが、楽天カードで生活費を支払って、還元されたポイントでやってみれば、<strong>「本当のお金を損せずに投資が試せる」</strong>というわけです。</p>
+        <p>さらに、ポイントで投資したファンドを売却した場合、<strong>売却益は「現金」として手元に戻ります。</strong>それでは、詳しく解説していきます！</p>
     </div>
 
-    <footer>
-        <p>&copy; しょーでんきんゆー All Rights Reserved.</p>
-    </footer>
+    <h2><i class="fa-solid fa-book-open"></i> 初心者向け：専門用語解説</h2>
+    <div class="glossary-card">
+        <div class="glossary-item">
+            <div class="glossary-term">ファンド</div>
+            <div class="glossary-desc">投資家から集めたお金を一つの大きな資金としてまとめ、運用のプロが管理する仕組み。</div>
+        </div>
+        <div class="glossary-item">
+            <div class="glossary-term">NISA</div>
+            <div class="glossary-desc">投資で得た利益に税金がかからなくなる、国が推奨するお得な非課税制度。</div>
+        </div>
+        <div class="glossary-item">
+            <div class="glossary-term">積み立て</div>
+            <div class="glossary-desc">毎月決まった額をコツコツと買い続ける、リスクを抑えやすい投資手法。</div>
+        </div>
+        <div class="glossary-item">
+            <div class="glossary-term">証券口座</div>
+            <div class="glossary-desc">株や投資信託を売買するために必要な専用の口座。</div>
+        </div>
+        <div class="glossary-item">
+            <div class="glossary-term">株式</div>
+            <div class="glossary-desc">企業が資金調達のために発行する証券。業績が良いと価値が上がる。</div>
+        </div>
+        <div class="glossary-item">
+            <div class="glossary-term">投資信託</div>
+            <div class="glossary-desc">小額から様々な株や債券に「おまかせ」で分散投資できる商品。</div>
+        </div>
+        <div class="glossary-item">
+            <div class="glossary-term">インデックスファンド</div>
+            <div class="glossary-desc">市場全体（平均）と同じ動きを目指す、手数料が安くて安定感のある運用。</div>
+        </div>
+        <div class="glossary-item">
+            <div class="glossary-term">アクティブファンド</div>
+            <div class="glossary-desc">市場平均以上のリターンを目指す運用。プロが判断するため手数料が高い。</div>
+        </div>
+    </div>
+
+    <h2><i class="fa-solid fa-star"></i> なぜ楽天の3サービスが最強なのか</h2>
+    <p>リスクを極限まで抑えて投資を始めたい場合、楽天の「カード・銀行・証券」の連携が最もおすすめです。</p>
+    
+    <div class="point-highlight">
+        <span>楽天カード × 楽天銀行 連携時のポイント還元率</span>
+        <span class="point-value">最大 1.5%</span>
+        <p>月10万円の生活費決済で、毎月1,500円分が自動で貯まります</p>
+    </div>
+
+    <p>楽天ポイントは、しょーでんが今まで貯めた中で最も「稼ぐのが簡単なポイント」です。月10万で生活しているなら1,000円分、楽天銀行引き落とし設定なら<strong>月1,500円分</strong>が勝手に貯まります。</p>
+    <p>さらにポイント消滅のリスクもほぼゼロです。楽天カードを毎月使っていれば、有効期限は実質永久に伸び続けます。</p>
+    <p>この「勝手に貯まったポイント」だけで積み立てNISAを始めれば、実質<strong>自己負担ゼロ</strong>。15万で生活している人なら月2,250円分も投資に回せます。これこそが究極のノーリスク投資です。</p>
+
+    <h2><i class="fa-solid fa-list-check"></i> 準備の4ステップ</h2>
+    <div class="step-container">
+        <div class="step-box">
+            <div class="step-num">1</div>
+            <div>楽天アカウント（ID）を作成する</div>
+        </div>
+        <div class="step-box">
+            <div class="step-num">2</div>
+            <div>楽天銀行の口座を開設する</div>
+        </div>
+        <div class="step-box">
+            <div class="step-num">3</div>
+            <div>楽天カードを発行し、引き落とし先を楽天銀行に設定する</div>
+        </div>
+        <div class="step-box">
+            <div class="step-num">4</div>
+            <div>楽天証券の口座を開設する</div>
+        </div>
+    </div>
+
+    <h2><i class="fa-solid fa-chart-line"></i> しょーでんのおすすめ投資先</h2>
+    <p>環境が整ったら、あとはポイントを使って投資するだけ。しょーでんがおすすめするのは以下の2つです。</p>
+    <ul>
+        <li><strong>eMAXIS Slim 米国株式（S&P500）</strong></li>
+        <li><strong>eMAXIS Slim 全世界株式（オール・カントリー）</strong></li>
+    </ul>
+
+    <h3>なぜ個別株ではなく「インデックスファンド」なのか？</h3>
+    <p>初心者が1社や2社の株に全額入れるのは、その会社が倒産したり暴落した時にリスクが大きすぎます。対して「S&P500」なら、米国の代表的な500社に分散投資します。一部の会社が落ちても、他がカバーしてくれるため、非常にリスクが低いのです。</p>
+    <p>また、手数料の面でもインデックスファンドが優秀です。人間のプロが運用する「アクティブファンド」は、多くの場合インデックスファンドの成績に勝てず、逆に高い手数料（手数料ハンター！）だけを取られてしまうことが多いというデータもあります。これは中田敦彦さんのYouTube大学でも紹介されていましたね。</p>
+
+    <div class="caution-box">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> 投資に関する重要なお約束</h3>
+        <p>これらはあくまでのしょーでんの意見です。<strong>「投資に絶対はありません」。</strong></p>
+        <p>「しょーでんが言っているから大丈夫」と思い込むのではなく、必ず自分でも仕組みを理解し、納得した上で始めてください。特定の発信者の言葉だけを信じるのではなく、自分でリスクを許容できる範囲で取り組むことが、投資で成功する一番の秘訣です。</p>
+    </div>
+
+    <h2><i class="fa-solid fa-flag-checkered"></i> まとめ</h2>
+    <div class="summary-section">
+        <ul class="summary-list">
+            <li>楽天カード決済で1%、銀行連携でさらに0.5%還元。</li>
+            <li>貯まったポイントは楽天証券で「つみたてNISA」に回せる。</li>
+            <li>ポイント投資なら自分のお金を失う恐怖がない。</li>
+            <li>売却すれば「現金」として戻ってくる。</li>
+            <li>投資先は低コストなインデックスファンドがおすすめ。</li>
+        </ul>
+    </div>
+
+    <div class="link-status">
+        【各種サービスへのリンクは現在準備中です。今しばらくお待ちください。】
+    </div>
 </div>
+
+<footer style="text-align: center; padding: 40px; color: #94a3b8; font-size: 12px;">
+    &copy; 2024 しょーでんきんゆー All Rights Reserved.
+</footer>
 
 </body>
 </html>
