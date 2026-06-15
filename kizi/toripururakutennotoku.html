@@ -105,16 +105,31 @@
         p { margin-bottom: 24px; font-size: 16px; letter-spacing: 0.5px; }
         strong { color: var(--rakuten-red); background: linear-gradient(transparent 70%, #fecaca 70%); }
 
+        /* 導入文とキャラクター画像のラッパー */
+        .intro-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
         /* 導入文ボックス */
         .intro-box {
             background-color: #fffafb;
             border: 2px solid #fee2e2;
             padding: 35px;
             border-radius: 12px;
-            margin-bottom: 50px;
+            flex: 1;
         }
 
         .intro-box p:last-child { margin-bottom: 0; }
+
+        /* キャラクター画像 */
+        .intro-char-image {
+            width: 220px; /* ちょうどいい大きさ */
+            height: auto;
+            flex-shrink: 0;
+        }
 
         /* アイキャッチ画像 */
         .eyecatch-image {
@@ -253,9 +268,20 @@
             margin: 40px 0;
         }
 
+        /* スマホ用レイアウト調整 */
         @media (max-width: 768px) {
             .container { padding: 30px; margin: 20px; }
             .article-title { font-size: 24px; }
+            
+            /* 導入文と画像を縦並びに変更 */
+            .intro-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .intro-char-image {
+                width: 150px; /* 少し小さめに */
+            }
+
             .step-item { flex-direction: column; text-align: left; }
             .step-num { margin-right: 0; margin-bottom: 15px; }
         }
@@ -273,12 +299,15 @@
     
     <h1 class="article-title">本当のお金を損せずに投資が試せる！<br>楽天ポイントで始める積み立てNISA完全ガイド</h1>
 
-    <div class="intro-box">
-        <p>しょーでんきんゆーのしょーでんです。<br>投資に興味はありますでしょうか？</p>
-        <p>積み立てNISAなどに興味はあるけど、実際にお金を入れるのが不安な方に今回の記事がおすすめです。</p>
-        <p>楽天ポイントを将来の資産として長期保存ができる情報をみなさんは知っていますでしょうか？<br>楽天カードを使うと支払い料金の1％がポイント還元されるのはご存じでしょう。<br>実は楽天カードの引き落としを楽天銀行に設定することで、さらに0.5％ポイント還元率がアップすることもご存じですか？</p>
-        <p>さらに、その楽天ポイントを使って楽天証券でNISAの積み立てが可能なんです。<br>しかし投資は怖いという声もあると思います。<br>そこで、本当のお金をいきなり入れるのではなく、楽天カードで生活費を支払って楽天銀行から引き落としをして、還元されたポイントでやってみれば、<strong>本当のお金を損せずに投資が試せる</strong>といういい情報です。</p>
-        <p>それがこの記事です。<br>さらに、実際にポイントで投資して不安になってファンドなどを売却した場合、売り上げはポイントではなく<strong>「現金として手元に戻ります」</strong>。<br>では解説していきます。</p>
+    <div class="intro-wrapper">
+        <div class="intro-box">
+            <p>しょーでんきんゆーのしょーでんです。<br>投資に興味はありますでしょうか？</p>
+            <p>積み立てNISAなどに興味はあるけど、実際にお金を入れるのが不安な方に今回の記事がおすすめです。</p>
+            <p>楽天ポイントを将来の資産として長期保存ができる情報をみなさんは知っていますでしょうか？<br>楽天カードを使うと支払い料金の1％がポイント還元されるのはご存じでしょう。<br>実は楽天カードの引き落としを楽天銀行に設定することで、さらに0.5％ポイント還元率がアップすることもご存じですか？</p>
+            <p>さらに、その楽天ポイントを使って楽天証券でNISAの積み立てが可能なんです。<br>しかし投資は怖いという声もあると思います。<br>そこで、本当のお金をいきなり入れるのではなく、楽天カードで生活費を支払って楽天銀行から引き落としをして、還元されたポイントでやってみれば、<strong>本当のお金を損せずに投資が試せる</strong>といういい情報です。</p>
+            <p>それがこの記事です。<br>さらに、実際にポイントで投資して不安になってファンドなどを売却した場合、売り上げはポイントではなく<strong>「現金として手元に戻ります」</strong>。<br>では解説していきます。</p>
+        </div>
+        <img src="rakutennosusumee.png" alt="キャラクター画像" class="intro-char-image">
     </div>
 
     <div class="eyecatch-image">
