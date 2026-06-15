@@ -132,10 +132,10 @@
         .glossary-desc { font-size: 14px; color: #475569; }
 
         /* 手順ステップ */
-        .step-list { margin: 40px 0; }
+        .step-list { margin: 40px 0 20px 0; }
         .step-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 20px;
             background: #fff;
             border: 1px solid #e2e8f0;
@@ -159,7 +159,36 @@
             flex-shrink: 0;
         }
 
-        .step-text { font-size: 18px; font-weight: bold; color: var(--deep-navy); }
+        .step-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-title { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: var(--deep-navy);
+            margin-bottom: 8px;
+        }
+        
+        .step-desc {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* リンク準備中（手順の下用） */
+        .link-placeholder-small {
+            text-align: center;
+            padding: 15px;
+            background: #f1f5f9;
+            border: 1px dashed #94a3b8;
+            border-radius: 8px;
+            color: #64748b;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
 
         /* まとめボックス */
         .summary-box {
@@ -203,22 +232,10 @@
             margin: 40px 0;
         }
 
-        /* リンク準備中 */
-        .link-placeholder {
-            text-align: center;
-            padding: 30px;
-            background: #f1f5f9;
-            border: 1px dashed #94a3b8;
-            border-radius: 8px;
-            color: #64748b;
-            margin-top: 50px;
-            font-weight: bold;
-        }
-
         @media (max-width: 768px) {
             .container { padding: 30px; margin: 20px; }
             .article-title { font-size: 24px; }
-            .step-item { flex-direction: column; text-align: center; }
+            .step-item { flex-direction: column; text-align: left; }
             .step-num { margin-right: 0; margin-bottom: 15px; }
         }
     </style>
@@ -299,24 +316,43 @@
     <div class="step-list">
         <div class="step-item">
             <div class="step-num">1</div>
-            <div class="step-text">楽天アカウント作成（IDを持っていない方）</div>
+            <div class="step-content">
+                <div class="step-title">楽天アカウント作成（IDを持っていない方）</div>
+                <div class="step-desc">楽天の公式サイトにアクセスし、「楽天会員登録（無料）」のボタンを押します。画面の案内に従ってメールアドレス、パスワード、氏名などの基本情報を入力するだけで、数分で完了します。</div>
+            </div>
         </div>
         <div class="step-item">
             <div class="step-num">2</div>
-            <div class="step-text">楽天銀行口座開設（まだの方）</div>
+            <div class="step-content">
+                <div class="step-title">楽天銀行口座開設（まだの方）</div>
+                <div class="step-desc">楽天銀行の公式サイトから「口座開設」へ進みます。スマホで運転免許証やマイナンバーカードの写真を撮って送信する「スマホで本人確認」機能を使えば、郵送不要でスピーディーに手続きができます。</div>
+            </div>
         </div>
         <div class="step-item">
             <div class="step-num">3</div>
-            <div class="step-text">楽天カード発行（クレジットカード発行）</div>
+            <div class="step-content">
+                <div class="step-title">楽天カード発行（クレジットカード発行）</div>
+                <div class="step-desc">楽天カードの公式サイトから申し込みを行います。年会費無料の「通常の楽天カード」を選び、氏名、住所、職業などを入力します。審査通過後、約1週間ほどで自宅にカードが届きます。</div>
+            </div>
         </div>
         <div class="step-item">
             <div class="step-num">4</div>
-            <div class="step-text">楽天カードの引き落とし口座をご自身の楽天銀行に設定</div>
+            <div class="step-content">
+                <div class="step-title">楽天カードの引き落とし口座をご自身の楽天銀行に設定</div>
+                <div class="step-desc">カード発行時、またはカード到着後に会員専用サイト「楽天e-NAVI」にログインし、毎月の利用代金の「引き落とし口座」を先ほど開設した楽天銀行に設定します。これで還元率がアップする準備が整います。</div>
+            </div>
         </div>
         <div class="step-item">
             <div class="step-num">5</div>
-            <div class="step-text">楽天証券口座開設（まだの方）</div>
+            <div class="step-content">
+                <div class="step-title">楽天証券口座開設（まだの方）</div>
+                <div class="step-desc">楽天証券のサイトから「口座開設」へ進みます。楽天会員IDでログインすれば名前や住所が自動で入力され簡単です。スマホでマイナンバーカードを撮影して提出し、必ず「NISA口座も開設する」を選択して申し込みを完了させます。</div>
+            </div>
         </div>
+    </div>
+    
+    <div class="link-placeholder-small">
+        ※各サービスのリンクはまだ準備中です
     </div>
 
     <h2>しょーでんがおすすめする投資先</h2>
@@ -326,7 +362,7 @@
         <li><strong>eMAXIS Slim 全世界株式（オール・カントリー）</strong></li>
     </ul>
 
-    <h3>なぜその二つなのか</h3>
+    <h3>なぜその2つなのか</h3>
     <p>昔ながらの個別株に投資するやり方を思い浮かべる人もいると思いますが、初心者がそれをやるにはリスクが高すぎるのです。<br>「この株に一点集中で投資するんだー」って言って1つ2つの株に投資したら、その株価が暴落すれば一瞬で終わりです。</p>
     
     <p>ですが、先ほど挙げたようなインデックスファンドなら、例えばS&P500なら米国株の代表500社に分散して投資をする形になりますし、何より少額（数千円から何なら数百円からでも）始められるのでリスクも小さいです。<br>その500社のどこかの株が落ちたとしても、他の上がってる株がカバーしてくれたり、自動で株価が落ちた株が他の指数に連動して成長の見込みがある株と入れ替わる場合もあるので、個別株に一点集中と比べればかなりリスクが低い投資になります。</p>
@@ -373,10 +409,6 @@
             <h4>5. 最終判断は「自分自身」で</h4>
             <p>投資に「絶対」はありません。しょーでんのおすすめや、中田敦彦さんなど特定の発信者が言っていたからという理由だけで思考停止して投資するのはNGです。必ず自分で仕組みを理解し、自分が許容できるリスクの範囲内で、納得した上で投資を始めてください。</p>
         </div>
-    </div>
-
-    <div class="link-placeholder">
-        楽天サービスのリンクはこれから張る予定で準備中
     </div>
 
 </div>
