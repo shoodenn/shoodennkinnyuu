@@ -33,13 +33,43 @@
             margin: 0;
             letter-spacing: 1px;
         }
+
+        /* 冒頭の歓迎・導入文 */
+        .intro-welcome {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #495057;
+            text-align: justify;
+        }
+
+        /* 自己紹介の見出し */
+        .self-intro-heading {
+            font-size: 22px;
+            color: #0056b3;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 自己紹介を囲うボックス */
+        .self-intro-container {
+            border: 2px solid #0056b3; /* 青色の枠線 */
+            background-color: #f0f7ff; /* 薄い青色の背景 */
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+        
         .profile-text {
             font-size: 16px;
-            white-space: pre-wrap;
-            margin-bottom: 40px;
+            white-space: pre-wrap; /* 改行を保持 */
+            margin: 0;
             text-align: justify;
             color: #495057;
         }
+
+        /* プロモーションエリア（楽天） */
         .promo-area {
             display: flex;
             align-items: center;
@@ -59,6 +89,17 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(191, 0, 0, 0.15);
         }
+        
+        /* 楽天画像のサイズ調整（大きく設定） */
+        .promo-img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
         .promo-text {
             flex: 1;
             font-size: 16px;
@@ -67,14 +108,7 @@
             color: #bf0000;
             text-align: left;
         }
-        .promo-img {
-            max-width: 120px; /* 画像を小さめに調整 */
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            flex-shrink: 0;
-        }
+        
         footer {
             text-align: center;
             font-size: 14px;
@@ -84,18 +118,19 @@
             margin-top: 50px;
             font-weight: 500;
         }
-        /* スマホ対応：画面が狭いときは縦並びにして見やすくする設定 */
+
+        /* スマホ対応 */
         @media (max-width: 576px) {
             .promo-area {
                 flex-direction: column;
                 text-align: center;
                 padding: 15px;
             }
+            .promo-img {
+                max-width: 180px;
+            }
             .promo-text {
                 text-align: center;
-            }
-            .promo-img {
-                max-width: 150px;
             }
         }
     </style>
@@ -107,9 +142,13 @@
         </header>
         
         <main>
-            <div class="profile-text">しょーでんきんゆーへようこそしょーでんです このブログでは 投資をはじめとする金融 株式投資 投資家マインド 経済の仕組みなど しょーでんが勉強した様々な知識を共有したいと思います といっても しょーでんってだれ？ って思うと思うので まず自己紹介します
+            <div class="intro-welcome">
+                しょーでんきんゆーへようこそしょーでんです このブログでは 投資をはじめとする金融 株式投資 投資家マインド 経済の仕組みなど しょーでんが勉強した様々な知識を共有したいと思います といっても しょーでんってだれ？ って思うと思うので まず自己紹介します
+            </div>
 
-しょーでんです 2026年現在　23歳 男 発達障害を持って生まれました 
+            <div class="self-intro-heading">自己紹介</div>
+            <div class="self-intro-container">
+                <div class="profile-text">しょーでんです 23歳 男 発達障害を持って生まれました 
 
 このブログを始めたきっかけは 僕が20歳のころ 投資に興味を持ち 米国株式のインデックスファンドがいいとかいうことを勉強したり 様々な投資についていろんな勉強を独学でしたことがあります その他のお金持ちの考え方や投資家マインドなどもめちゃくちゃ勉強していました 
 
@@ -122,6 +161,7 @@
 そのFXに逃げたころは 正直FXで一角千金みたいなのを狙ってる自分がいました まず負けるし短期的なトレードはギャンブルに近くなる傾向になるので 僕のようにならないようにも 言います FXはまず勝てない 一角千金狙いでやると特に 海外FXなんてもってのほかです 絶対におすすめしません 
 
 ということで 前置きが長くなってしまいました</div>
+            </div>
 
             <a href="https://shoodenn.github.io/shoodennkinnyuu/kizi/toripururakutennotoku.html" class="promo-area">
                 <img src="https://shoodenn.github.io/shoodennkinnyuu/aikyatti/toripururakutenn.png" alt="楽天三点セット" class="promo-img">
